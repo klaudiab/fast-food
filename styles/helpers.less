@@ -1,0 +1,114 @@
+
+@phone: ~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (min-width: 992px)";
+@desktop: ~"only screen and (min-width: 1200px)";
+@tablet2: ~"only screen and (max-width: 992px)";
+
+
+// Wyrównanie
+.center-text {
+	text-align: center;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-none {
+	float: none;
+}
+
+.center-no-float {
+	.float-none;
+	.center-text;
+}
+
+.no-center-float {
+	.float-left;
+	text-align: initial;
+}
+
+// wyrownanie w pionie
+.center-vertical {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// Widocznosc
+.invisible {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
+// Rozmiary
+.absolute-one-hundred-size {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+
+.size(@width;@height) {
+	width: @width;
+	height: @height;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+// Listy
+.list-style-none {
+	list-style-type: none;
+}
+
+// Ramki
+.section-border-bottom(@border-color) {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: @border-color;
+}
+
+.section-border-bottom-sides(@border-color) {
+	border-width: 0 2px 2px 2px;
+	border-style: solid;
+	border-color: @border-color;
+}
+
+// Elementy plywajace
+.overflow-fix {
+	overflow: auto;
+}
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// podstawowe przejscie 0.2s
+.basic-transition {
+	transition: all 0.2s ease-in-out;
+}
+
+// Nakladka 
+.dark-overlay {
+	content: "";
+	z-index: 0;
+	.absolute-one-hundred-size;
+	background: none repeat 0 0 rgba(30, 30, 30, 0.5);
+}

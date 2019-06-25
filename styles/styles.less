@@ -1,0 +1,538 @@
+// Siatka kolumn
+@columns: 12;
+@column-width: 65;
+@gutter-width: 30;
+@total-width: 100%;
+
+.our-menu .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4)
+	}
+}
+
+// kontener
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	clear: both;
+	padding: 15px;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Nagłówki 
+h1, h2, h3 {
+	line-height: 1.1;
+}
+
+// mixin dla przycisków
+.basic-button(@color;@background-color) {
+	color: @color;
+	background-color: @background-color;
+	text-decoration: none;
+	.inline-block;
+	font-size: @basic-font-size;
+	font-weight: 400;
+	line-height: @basic-line-height;
+	.text-uppercase;
+}
+
+// główny kontener
+#main-container {
+	padding-top: 53px;
+}
+
+// Nagłówek 
+header {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: @header-background;
+	.navbar {
+	height: 60px;
+		.nav-logo {
+				.float-left;
+				.center-vertical;
+				z-index: 2;
+
+				a{
+					background-color: transparent;
+				}
+
+				img {
+					height: 80px;
+				}
+				}	
+			}
+}
+
+// ukrywa menu główne 
+#main-menu {
+	.invisible;
+	@media @phone {
+		.block;
+	}
+}
+
+.main-menu-content {
+	.float-right;
+	.center-vertical;
+	ul {
+		.list-style-none;
+		li {
+			.float-left;
+			.block;
+			.text-uppercase;
+			padding: 0;
+
+			span {
+				text-transform: capitalize;
+				color: @text-color-b;
+				font-size: 14px;
+				padding: 15px;
+
+				@media @tablet2 {
+					.invisible;
+				}
+			}
+
+			.fa-phone, .fa-map-marker-alt {
+				color: @text-color-y;margin-right: 10px;
+			}
+			a {
+				color: @text-color-g;
+				font-size: 15px;
+				font-family: @font-family;
+				font-weight: 500;
+				padding: 30px 5px;
+				line-height: 20px;
+				.basic-transition;
+				&:hover {
+					background-color: @text-color-y;
+					padding-top: 43px;
+					padding-bottom: 32px;
+					color: @basic-text-color;
+				}
+				
+				@media @tablet {
+					padding: 20px 20px;
+				}
+			}
+
+		}
+	}
+}
+
+// menu mobilne 
+.slicknav_menu {
+	position: fixed;
+	left: 0;
+	right: 0;
+	@media @phone {
+		.invisible;
+	}
+}
+
+// główny slider
+.bxslider {
+	.main-slide-1 {
+		background-image: url('../images/pizza.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+
+	.main-slide-2 {
+		background-image: url('../images/burger.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+
+	.main-slide-3 {
+		background-image: url('../images/cake.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+}
+
+// zawartosc slajdu
+.main-slider-content {
+	padding: 15% 2%;
+	color: @basic-text-color;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	h1 {
+	font-size: 26px;
+	line-height: 33px;
+	font-weight: 400; 
+	text-align: center;
+	@media @tablet {
+		font-size: 48px;
+		line-height: 60px;
+		}
+	}
+	p {
+		font-size: 14px;
+		line-height: @basic-line-height;
+		@media @tablet {
+			font-size: 22px;
+		}
+	}
+	a {
+		position: relative;
+		.basic-button(@text-color-b; @text-color-y);
+		padding: 25px 35px;
+		margin-top: 70px;
+	}
+
+	a:hover {
+		color: @basic-text-color;
+		background-color: @button-background;
+	}
+}
+
+// Sekcja nasze menu
+
+.our-menu {
+	padding: 10px 0 60px;
+	.overflow-fix;
+	.center-text;
+	
+	h1 {
+	.header-mixin(40px;26px;@text-color-b);
+	padding: 30px;
+	.section-border-bottom-sides(@text-color-b);
+	}
+	
+	.single-col {
+		padding-bottom: 20px;
+		position: relative;
+		.center-text;
+		.inline-block;
+
+		&:hover {
+			transform: scale(1.05);
+			transition: 1s;
+		}
+
+		@media @tablet {
+			margin-bottom: 0;
+		}
+		img {
+			width: 450px;
+			height: 250px;
+		}
+
+		.card-img-overlay {
+	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top: 40%;
+
+	&:hover {
+		padding-top: 20%;
+		transition: 1s;
+	}
+}
+
+h2 {
+	font-size: 36px;
+	color: @basic-text-color;
+	}
+		p {
+	font-size: 18px;
+	color: @basic-text-color;
+}
+
+
+}
+}
+
+
+
+
+
+
+// Baner foto
+.photo-banner {
+	.center-text;
+	background: url('../images/foto_banner2.jpg') fixed 0 0;
+	.photo-banner-inner {
+		position: relative;
+		z-index: 0;
+		&:after {
+			.dark-overlay;
+		}
+		.container {
+			position: relative;
+			z-index: 1;
+			padding: 175px 0;
+		}
+		h2 {
+			.header-mixin(48px;26px;@basic-text-color);
+			.text-uppercase;		}
+		p {
+			color: @basic-text-color;
+		}
+		a {
+			position: relative;
+			.basic-button(@text-color-b;@text-color-y);
+			margin: 15px 0;
+			padding: 15px 30px;
+			.basic-transition;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+// Sekcja nasze usługi
+
+.services {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+    color: @text-color-b;
+
+    
+}
+
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.row .servhov {
+	.column(12);
+	@media @tablet {
+		.column(3)
+	}
+}
+
+.servhov {
+	width: 25%;
+	padding-top: 70px;
+
+	@media @tablet {
+		padding-top: 5px;
+	}
+
+}
+
+.servhov img {
+	width: 50%;
+	transition: transform 2s;
+}
+
+.servhov img:hover {
+	transform: rotateX(180deg);
+}
+
+h6 {
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: 3px solid @text-color-y;
+	margin-left: 35px;
+	margin-right: 35px;
+	padding: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+p {
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+
+// Sekcja nasz lokal 
+
+
+.gallery {
+	padding-bottom: 5%;
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -15px;
+		margin-right: -15px;
+
+		.col-12 {
+			flex: 0 0 100%;
+    max-width: 100%;
+		}
+
+	}
+
+	img {
+	transition: transform 1s;
+    width: 25%;
+    float: left;
+    vertical-align: middle;
+   	border-style: none;
+   	@media @tablet {
+   		height: 250px;
+   	}
+   .column(12);
+	@media @tablet {
+		.column(3)
+	}
+	}
+
+	img:hover {
+	transform: scale(1.1);
+}
+}
+
+// mapy
+
+.maps {
+	margin: 0 auto;
+}
+
+// Stopka 
+footer {
+	background-color: @footer-background;
+	color: @footer-text;
+}
+
+.footer-main {
+	padding-top: 70px;
+
+	h3 {
+		.header-mixin(20px; 30px; @basic-text-color);
+		text-transform: uppercase;
+		font-size: 24px;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	hr {
+		border: 0.7px solid @text-color-y;
+	}
+
+	.single-col {
+		margin-bottom: 50px;
+		display: block;
+		@media @tablet {
+			margin-bottom: 0;
+			display: inline-block;
+			width: 30%;
+		}
+	}
+}
+
+// stopka kontakt
+.adress {
+
+img {
+	height: 60px;
+	margin-bottom: 20px;
+}
+
+h4 {
+	.header-mixin(18px; 30px; @basic-text-color);
+
+	span {
+		color: @footer-text;
+	}
+}
+}
+
+// stopka menu 
+.more-menu {
+
+	ul {
+	list-style: none;
+	a {
+		color: @footer-text;
+		text-transform: uppercase;
+		font-weight: 600;
+		transition: padding-left 1s;
+
+		&:hover {
+			color: @text-color-y;
+			padding-left: 20px;
+		}
+
+		i {
+			padding-right: 15px;
+		}
+	}
+}
+
+}
+
+// stopka social
+.more-social {
+	
+	@media @tablet {
+		float: right;
+	}
+
+	ul {
+		list-style: none;
+
+		a {
+			font-size: 24px;
+			text-transform: capitalize;
+			color: @footer-text;
+
+			&:hover {
+				color: @basic-text-color;
+			}
+
+			i {
+				padding-right: 15px;
+				padding-bottom: 55px;
+				font-size: 30px;
+
+			}
+
+			span {
+				color: @basic-text-color;
+			}
+		}
+	}
+}
+
+.copyright {
+	a {
+		color: @footer-text;
+
+		&:hover {
+			color: @text-color-y;
+		}
+	}
+}
